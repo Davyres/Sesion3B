@@ -16,8 +16,7 @@ class CuentaTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		double inicio = 0;
-		cta = new Cuenta (0);
+		
 	}
 
 	@AfterAll
@@ -26,6 +25,8 @@ class CuentaTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
+		double inicio = 20;
+		cta = new Cuenta (inicio);
 	}
 
 	@AfterEach
@@ -35,11 +36,11 @@ class CuentaTest {
 	@Test
 	void testIngreso() {
 		cta.ingreso(25);
-		assertEquals(25,cta.getSaldo());
+		assertEquals(45,cta.getSaldo());
 	}
 	@Test
 	void testReintegro() {
-		cta.reintegro(25);
-		assertEquals(25,cta.getSaldo());
+		cta.reintegro(15);
+		assertEquals(5,cta.getSaldo());
 	}
 }
